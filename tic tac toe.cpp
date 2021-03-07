@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 	char active = 'X', userInput, winner;
+	string checkInput;
 	bool isWinner = false;
 	int numTurns = 0;
 	char board[3][3] = {
@@ -30,7 +31,14 @@ int main() {
 	while (!isWinner) {
 		int player = (active == 'X') ? 1 : 2;
 		cout << "\n    Player " << player << ", pick a spot: ";
-		cin >> userInput;
+		getline(cin, checkInput);
+		if (checkInput.size() > 1 || !isdigit(checkInput.at(0))) {
+			cout << "\n    Invalid input, try again." << endl;
+			continue;
+		}
+		else {
+			userInput = checkInput.at(0);
+		}
 		switch(userInput) {
 		case '1':
 			if (board[0][0] == userInput) {
@@ -171,4 +179,5 @@ int main() {
 	else {
 		cout << "\n\t      Tie Game!" << endl;
 	}
+	_getch();
 }
