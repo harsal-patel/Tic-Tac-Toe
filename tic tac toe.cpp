@@ -9,11 +9,11 @@ int main() {
 	string checkInput;
 	bool isWinner = false;
 	int numTurns = 0;
-	char board[3][3] = {
-							{'1', '2', '3'},
-							{'4', '5', '6'},
-							{'7', '8', '9'}
-						};
+	char board[3][3] =	{
+				{'1', '2', '3'},
+				{'4', '5', '6'},
+				{'7', '8', '9'}
+				};
 	
 	cout << "\t   TIC - TAC - TOE" << endl;					//Shows board at the start of the game before first person makes a move.
 	cout << "\n   Player 1 [X]       Player 2 [O]" << endl;			//Board uses numbers 1 - 9 as spots that a player can select.
